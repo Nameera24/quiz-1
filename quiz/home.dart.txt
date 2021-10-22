@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget {
+  Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text(
+            "MobiSport",
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+          iconTheme: IconThemeData(color: Colors.black),
+          leading: Icon(Icons.square_foot),
+          backgroundColor: Colors.white,
+          actions: [Icon(Icons.search)],
+          bottom: PreferredSize(
+              child: Container(
+                  color: Colors.white,
+                  child: Text(
+                    "Running....",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
+                  )),
+              preferredSize: Size.fromHeight(kToolbarHeight))),
+      body: ListView.builder(
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                      width: 200, height: 150, child: Image.asset("shoe4.jpg")),
+                  Column(
+                    children: [
+                      Text("Side Block",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Text("1200",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text("Pairs",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                          ),
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                          ),
+                        ],
+                      ),
+                      Text('\$139.99',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
+  }
+}
